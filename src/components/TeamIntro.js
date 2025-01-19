@@ -1,5 +1,15 @@
 import React from 'react';
 import TeamMember from './TeamMember';
+import { motion } from "framer-motion";
+
+const portals = [
+  { name: "NAPS", image: require("../assets/images/Apprenticeship (NAPS) portal.jpg") },
+  { name: "ASCI", image: require("../assets/images/ASCI DBMS portal.jpg") },
+  { name: "ESSCI", image: require("../assets/images/ESSCI  DBMS portal.jpg") },
+  { name: "HSSC", image: require("../assets/images/HSSC DBMS portal.jpg") },
+  { name: "NASSCOM INSDMS", image: require("../assets/images/NASSCOM INSDMS.jpg") },
+  { name: "Skill India Portal (SIDH)", image: require("../assets/images/Skill india portal (SIDH).jpg") },
+];
 
 const teamData = [
   {
@@ -84,15 +94,39 @@ hobbies: "Football, basketball, snooker.",
 }
 ];
 
+
 const TeamIntros = () => {
   return (
-    <div style={{ backgroundColor: '#e8f5e9', padding: '40px 20px', fontFamily: 'Arial, sans-serif' }}>
-      {}
-      <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-        <h1 style={{ color: '#1b5e20', fontSize: '36px', marginBottom: '20px' }}>
+    <motion.div
+      className="team-intros"
+      style={{
+        backgroundColor: "#e8f5e9",
+        padding: "40px 20px",
+        fontFamily: "Arial, sans-serif",
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      {/* Team Introduction */}
+      <motion.div
+        style={{ textAlign: "center", marginBottom: "30px" }}
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 style={{ color: "#1b5e20", fontSize: "36px", marginBottom: "20px" }}>
           Meet the Business Intelligence Team
         </h1>
-        <p style={{ color: '#4caf50', fontSize: '18px', maxWidth: '800px', margin: '0 auto', lineHeight: '1.8' }}>
+        <p
+          style={{
+            color: "#4caf50",
+            fontSize: "18px",
+            maxWidth: "800px",
+            margin: "0 auto",
+            lineHeight: "1.8",
+          }}
+        >
           The Business Intelligence (BI) team at Mercer Mettl is a dynamic group of dedicated professionals
           committed to transforming data into actionable insights. Our mission is to streamline processes,
           enhance workflows, and empower decision-making through accurate reporting and innovative solutions.
@@ -101,67 +135,92 @@ const TeamIntros = () => {
           insights. Collaboration, problem-solving, and precision define our daily tasks as we aim to drive
           operational excellence and strategic success.
         </p>
-      </div>
+      </motion.div>
 
+      {/* Team Member Cards */}
       <div
         style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '20px',
-          justifyContent: 'center',
-          padding: '20px',
-          backgroundColor: '#ffffff',
-          borderRadius: '10px',
-          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+          justifyContent: "center",
+          padding: "20px",
+          backgroundColor: "#ffffff",
+          borderRadius: "10px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         }}
       >
         {teamData.map((member, index) => (
-          <div
+          <motion.div
             key={index}
-            style={{
-              backgroundColor: '#dcedc8',
-              borderRadius: '15px',
-              boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
-              padding: '20px',
-              width: '280px',
-              textAlign: 'center',
-              color: '#1b5e20',
-            }}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.5 }}
           >
-            <img
-              src={member.photo}
-              alt={member.name}
-              style={{
-                width: '120px',
-                height: '120px',
-                borderRadius: '50%',
-                border: '3px solid #2e7d32',
-                marginBottom: '10px',
-              }}
+            <TeamMember
+              name={member.name}
+              photo={member.photo}
+              designation={member.designation}
+              education={member.education}
+              journey={member.journey}
+              experience={member.experience}
+              tools={member.tools}
+              dailyTasks={member.dailyTasks}
+              uniqueAspect={member.uniqueAspect}
             />
-            <h3 style={{ fontSize: '20px', marginBottom: '10px' }}>{member.name}</h3>
-            <h4 style={{ fontSize: '16px', color: '#388e3c', marginBottom: '10px' }}>{member.designation}</h4>
-            <p style={{ fontSize: '14px', marginBottom: '10px' }}>
-              <strong>Education:</strong> {member.education}
-            </p>
-            <p style={{ fontSize: '14px', marginBottom: '10px' }}>
-              <strong>Experience:</strong> {member.experience}
-            </p>
-            <p style={{ fontSize: '14px', marginBottom: '10px' }}>
-              <strong>Tools:</strong> {member.tools}
-            </p>
-            <p style={{ fontSize: '14px', marginBottom: '10px' }}>
-              <strong>Daily Tasks:</strong> {member.dailyTasks}
-            </p>
-            <p style={{ fontSize: '14px' }}>
-              <strong>Unique Aspect:</strong> {member.uniqueAspect}
-            </p>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+
+      {/* Portals Section */}
+      <motion.div
+        className="portal-section"
+        style={{
+          marginTop: "40px",
+          textAlign: "center",
+          padding: "20px",
+          backgroundColor: "#dcedc8",
+          borderRadius: "10px",
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+      >
+        <h2 style={{ color: "#2e7d32", marginBottom: "20px" }}>Portals We Work On</h2>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            justifyContent: "center",
+          }}
+        >
+          {portals.map((portal, index) => (
+            <motion.div
+              key={index}
+              style={{
+                width: "200px",
+                textAlign: "center",
+                backgroundColor: "#ffffff",
+                borderRadius: "10px",
+                padding: "10px",
+                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              <img
+                src={portal.image}
+                alt={portal.name}
+                style={{ width: "100%", borderRadius: "10px" }}
+              />
+              <h4 style={{ color: "#388e3c", marginTop: "10px" }}>{portal.name}</h4>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
 export default TeamIntros;
-
