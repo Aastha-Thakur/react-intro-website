@@ -1,0 +1,20 @@
+.team-member {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 60px solid purple; /* Dark Purple Border */
+    border-radius: 60px; /* Rounded Corners */
+    box-shadow: 0px 4px 10px purple; /* Shadow for Depth */
+    padding: 20px;
+    background-color: lavenderblush; /* Light Purple Background */
+    margin: 10px;
+    max-width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 8px 16px violet; 
+  }
+  
