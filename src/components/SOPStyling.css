@@ -3,43 +3,50 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 20px;
 }
 
 .sop-card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sop-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-.sop-card {
-  background-color: #f5f5f5;
-  border: 3px solid purple;
-  border-radius: 10px;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  position: relative;
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+  border-color: #a855f7; /* Vibrant purple */
 }
 
 .sop-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  color: #333;
+  color: #444;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .read-more-button {
   display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #d4d2d6;
+  margin-top: 15px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #a855f7, #c489e4);
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .read-more-button:hover {
-  background-color: #c489e4;
+  background: linear-gradient(135deg, #c489e4, #a855f7);
+  transform: scale(1.05);
 }
-
