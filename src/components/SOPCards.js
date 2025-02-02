@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const sopData = [
   { title: "Result Generation", path: "https://drive.google.com/file/d/1lKvmP13_37Uf2g95oGuPs62Px1R3nkQz/view?usp=sharing" },
-  { title: "Assessor Upload", path: "/assessor-upload" },
-  { title: "Uploading", path: "/uploading" },
-  { title: "Agency Validation", path: "/agency-validation" },
+  { title: "Assessor Upload", path: "https://drive.google.com/file/d/1EFWA-Ci1K2WL3Avho9Oqu-h1xusg5PKe/view?usp=sharing" },
+  { title: "Uploading", path: "https://drive.google.com/file/d/1kmvaRWG9uj3sbkgBPxXXz00mHcUdKycy/view?usp=sharing" },
+  { title: "Agency Validation", path: "https://drive.google.com/file/d/1Lz7B_D8di0i58e_yRtKfoSMTcLka2ac9/view?usp=sharing" },
 ];
 
 const SOPCards = () => {
