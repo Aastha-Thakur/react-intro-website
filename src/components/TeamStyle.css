@@ -1,20 +1,52 @@
-.team-member {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 60px solid purple; /* Dark Purple Border */
-    border-radius: 60px; /* Rounded Corners */
-    box-shadow: 0px 4px 10px purple; /* Shadow for Depth */
-    padding: 20px;
-    background-color: lavenderblush; /* Light Purple Background */
-    margin: 10px;
-    max-width: 300px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .team-member:hover {
-    transform: scale(1.05); 
-    box-shadow: 0px 8px 16px violet; 
-  }
-  
+.team-member-card {
+  border: 2px solid purple;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  background-color: #f9f9ff;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.team-member-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-member-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.team-member-designation {
+  font-size: 14px;
+  color: #666;
+}
+
+.team-member-info {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.read-more-button {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #4a0072;
+}

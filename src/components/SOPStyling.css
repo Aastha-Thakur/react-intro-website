@@ -1,0 +1,45 @@
+.sop-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.sop-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.sop-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.sop-card {
+  background-color: #f5f5f5;
+  border: 3px solid purple;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.sop-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.read-more-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #d4d2d6;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.read-more-button:hover {
+  background-color: #c489e4;
+}
+
